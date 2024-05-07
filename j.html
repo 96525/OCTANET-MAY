@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Maker App</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .options {
+    margin-left: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Quiz Maker App</h2>
+  <form id="quizForm">
+    <div class="question">
+      <p>Question 1: What is the capital of France?</p>
+      <div class="options">
+        <input type="radio" name="q1" value="paris"> Paris<br>
+        <input type="radio" name="q1" value="london"> London<br>
+        <input type="radio" name="q1" value="berlin"> Berlin<br>
+      </div>
+    </div>
+    <div class="question">
+      <p>Question 2: Which planet is known as the Red Planet?</p>
+      <div class="options">
+        <input type="radio" name="q2" value="mars"> Mars<br>
+        <input type="radio" name="q2" value="jupiter"> Jupiter<br>
+        <input type="radio" name="q2" value="saturn"> Saturn<br>
+      </div>
+    </div>
+    <div class="question">
+      <p>Question 3: What is the chemical symbol for water?</p>
+      <div class="options">
+        <input type="radio" name="q3" value="h2o"> H2O<br>
+        <input type="radio" name="q3" value="co2"> CO2<br>
+        <input type="radio" name="q3" value="o2"> O2<br>
+      </div>
+    </div>
+    <div class="question">
+      <p>Question 4: Who wrote "To Kill a Mockingbird"?</p>
+      <div class="options">
+        <input type="radio" name="q4" value="harper_lee"> Harper Lee<br>
+        <input type="radio" name="q4" value="j_k_rowling"> J.K. Rowling<br>
+        <input type="radio" name="q4" value="stephen_king"> Stephen King<br>
+      </div>
+    </div>
+    <div class="question">
+      <p>Question 5: What is the tallest mountain in the world?</p>
+      <div class="options">
+        <input type="radio" name="q5" value="everest"> Mount Everest<br>
+        <input type="radio" name="q5" value="kilimanjaro"> Mount Kilimanjaro<br>
+        <input type="radio" name="q5" value="k2"> K2<br>
+      </div>
+    </div>
+    <input type="submit" value="Submit">
+    <input type="clear"  value="clear">
+  </form>
+</div>
+
+<script>
+  document.getElementById('quizForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Get user selected answers
+    const answers = {
+      q1: document.querySelector('input[name="q1"]:checked').value,
+      q2: document.querySelector('input[name="q2"]:checked').value,
+      q3: document.querySelector('input[name="q3"]:checked').value,
+      q4: document.querySelector('input[name="q4"]:checked').value,
+      q5: document.querySelector('input[name="q5"]:checked').value,
+    };
+    console.log(answers); // For testing, you can replace with your logic to process the answers
+    // Here you can process the answers as you like, for example, calculate score or show correct answers
+  });
+</script>
+
+</body>
+</html>
